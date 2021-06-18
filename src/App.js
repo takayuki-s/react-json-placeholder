@@ -1,11 +1,22 @@
+import axios from "axios";
 import "./styles.css";
 
 export default function App() {
   const onClickUsers = () => {
-    alert("users");
+    axios
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
   };
   const onClickUser1 = () => {
-    alert("user1");
+    axios
+      .get("https://jsonplaceholder.typicode.com/users/2")
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
   };
   return (
     <div className="App">
